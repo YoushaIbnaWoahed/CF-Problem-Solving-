@@ -1,4 +1,4 @@
-// Question - J
+// Question - k
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -13,17 +13,17 @@ int main()
     string s;
     cin >> s;
 
-    int freq[26] = {0};
+    string target = "hello";
+    int j = 0;
 
-    for(auto c:s){
-        freq[c - 'a']++;
-    }
-    for(int i=0; i<26; i++){
-        if(freq[i] > 0){
-            cout << char('a' + i) << " : " << freq[i] << endl;
-
+    for(char c:s){
+        if(c == target[j]){
+            j++;
+            if(j == target.size()) break;
         }
     }
+    if(j == target.size()) cout << "YES\n";
+    else cout << "NO\n";
 
     return 0;
 }
